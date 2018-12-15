@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "preserveSymlinks": true,
             "outputPath": "dist/ngpractice",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -110,6 +111,7 @@
         "e2e": {
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
+            "preserveSymlinks": true,
             "protractorConfig": "e2e/protractor.conf.js",
             "devServerTarget": "ngpractice:serve"
           },

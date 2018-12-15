@@ -1,0 +1,28 @@
+
+<div class="container">
+    <ul>
+        <li *ngFor="let ev of events">
+            <span>{{ev.id}}</span>
+            {{ ev.name }}
+            <img [src]="ev.pic" alt="image-description" width="50px" height="50px">
+            <img *ngIf="!ev.pic" src="assets/default-placeholder.png" width="50px" height="50px">
+            <button class="delete edit" (click)="edit(ev.id)">szerkesztés</button>
+            <button class="delete" (click)="delete(ev.id)">törlés</button>
+        </li>
+    </ul>
+    <div class="left">
+        <label for="eventname">új esemény:</label>
+        <input type="text" #newEventNameInput id="eventname" [value]="modifyEvent.name">
+    </div>
+    <div class="left">
+        <label for="eventpic">új fénykép:</label>
+        <input type="text" accept="image/*" #newEventPicInput id="eventpic" [value]="modifyEvent.pic">
+    </div>
+<div class="left">
+    <button class="add" (click)="add(newEventNameInput, newEventPicInput)">hozzáadás</button>
+</div>
+</div>
+
+<pre>
+    {{ events | json }}
+</pre>
